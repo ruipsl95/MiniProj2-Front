@@ -75,6 +75,11 @@ const routes = [
     component: () => import("@/views/animals/ListAnimals.vue")
   },
   {
+    path: "/admin/experts",
+    name: "listExperts",
+    component: () => import("@/views/experts/ListExperts.vue")
+  },
+  {
     path: "/admin/animals/:animalId",
     name: "editAnimal",
     component: () => import("@/views/animals/EditAnimal.vue")
@@ -145,14 +150,6 @@ const routes = [
   {
     path: "*",
     component: () => import("@/views/Error404.vue")
-  },
-  {
-    path: "admin/experts",
-    name: "experts",
-    component: () => import("@/views/Experts.vue"),
-    meta: {
-      rule: "user"
-    }
   }
 ];
 
