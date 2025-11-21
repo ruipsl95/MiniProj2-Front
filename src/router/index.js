@@ -65,6 +65,11 @@ const routes = [
     component: () => import("@/views/users/AddUser.vue")
   },
   {
+    path: "/admin/sponsors/add",
+    name: "addSponsor",
+    component: () => import("@/views/sponsors/AddSponsor.vue")
+  },
+  {
     path: "/admin/users/:userId",
     name: "editUser",
     component: () => import("@/views/users/EditUser.vue")
@@ -78,6 +83,11 @@ const routes = [
     path: "/admin/experts",
     name: "listExperts",
     component: () => import("@/views/experts/ListExperts.vue")
+  },
+  {
+    path: "/admin/sponsors",
+    name: "listSponsors",
+    component: () => import("@/views/sponsors/ListSponsors.vue")
   },
   {
     path: "/admin/animals/:animalId",
