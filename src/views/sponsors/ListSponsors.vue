@@ -43,7 +43,7 @@
               <tr v-for="sponsor of sponsors" :key="sponsor._id">
                 <td class="pt-4">{{sponsor.name}}</td>
                 <td class="pt-4">{{sponsor.animal}}</td>
-                <td class="pt-4">{{sponsor.address}}</td>
+                <td class="pt-4">{{sponsor.endereco}}</td>
                 <td class="pt-4">{{sponsor.contact}}</td>
                  <td class="pt-4">{{sponsor.photo}}</td>
                 <td>
@@ -145,7 +145,7 @@ export default {
       return `
           <h5>Categoria Animal: <b>${sponsor.animal}</b></h5>
           <hr>
-          <p><b>Endereço:</b> ${sponsor.address}</p> 
+          <p><b>Endereço:</b> ${sponsor.endereco}</p> 
           <p><b>Contacto:</b> ${sponsor.contact}</p>
           <br>
           <p><small>ID: ${sponsor._id}</small></p>

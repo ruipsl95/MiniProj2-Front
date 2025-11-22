@@ -20,7 +20,7 @@
               />
             </div>
             <div class="form-group">
-              <select id="sltGroup" class="form-control form-control-lg" v-model="animal" required>
+              <select id="sltAnimal" class="form-control form-control-lg" v-model="animal" required>
                 <option value>-- SELECIONA ANIMAL --</option>
                 <option value="cao">CÃO</option>
                 <option value="gato">GATO</option>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
               <input
-                v-model="endereco"
+                v-model="contact"
                 type="tel"
                 class="form-control form-control-lg"
                 id="txtContact"
@@ -87,7 +87,7 @@ export default {
   data: () => {
     return {
       name: "",
-      group: "",
+      animal: "",
       endereco: "", // Adicionado
       contact: "",  // Adicionado (para separar do endereço)
       photo: null  // Armazena o ficheiro binário

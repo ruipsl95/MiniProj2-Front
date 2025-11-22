@@ -5,6 +5,7 @@ import moduleBase from "./module";
 import moduleAuth from "./auth/auth.module";
 import moduleUser from "./users/user.module";
 import moduleAnimal from "./animals/animal.module";
+import moduleSponsor from "./sponsors/sponsor.module";
 import moduleQuiz from "./quizzes/quiz.module";
 import moduleQuestion from "./questions/question.module";
 
@@ -20,6 +21,7 @@ export default new Vuex.Store({
     animal: moduleAnimal,
     user: moduleUser,
     quiz: moduleQuiz,
-    question: moduleQuestion
+    question: moduleQuestion,
+    sponsor: moduleSponsor
   }
 });
