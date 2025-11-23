@@ -7,13 +7,17 @@
         <b-col cols="2"></b-col>
         <b-col>
           <router-link
-            :to="{name:'addExpert'}"
+            :to="{ name:'addExpert' }"
             tag="button"
             class="btn btn-outline-success mr-2 mt-2"
           >
             <i class="fas fa-plus-square"></i> ADICIONAR EXPERT
           </router-link>
-          <router-link :to="{name:'admin'}" tag="button" class="btn btn-outline-info mr-2 mt-2">
+          <router-link
+            :to="{ name:'admin' }"
+            tag="button"
+            class="btn btn-outline-info mr-2 mt-2"
+          >
             <i class="fas fa-bars"></i> MENU PRINCIPAL
           </router-link>
         </b-col>
@@ -29,8 +33,16 @@
               <tr>
                 <th scope="col">
                   NOME
-                  <i class="fas fa-arrow-up" v-if="sortType===1" @click="sort()"></i>
-                  <i class="fas fa-arrow-down" v-else @click="sort()"></i>
+                  <i
+                    class="fas fa-arrow-up"
+                    v-if="sortType === 1"
+                    @click="sort()"
+                  ></i>
+                  <i
+                    class="fas fa-arrow-down"
+                    v-else
+                    @click="sort()"
+                  ></i>
                 </th>
                 <th scope="col">GRUPO</th>
                 <th scope="col">DESCRIÇÃO</th>
@@ -40,12 +52,13 @@
             </thead>
             <tbody>
               <tr v-for="expert of experts" :key="expert._id">
-                <td class="pt-4">{{expert.name}}</td>
-                <td class="pt-4">{{expert.group}}</td>
-                <td class="pt-4">{{expert.desc}}</td>
+                <td class="pt-4">{{ expert.name }}</td>
+                <td class="pt-4">{{ expert.group }}</td>
+                <td class="pt-4">{{ expert.desc }}</td>
+                <td class="pt-4">{{ formatDate(expert.createdAt) }}</td>
                 <td>
                   <router-link
-                    :to="{name:'editExpert', params:{expertId: expert._id}}"
+                    :to="{ name:'editExpert', params:{ expertId: expert._id } }"
                     tag="button"
                     class="btn btn-outline-success mr-2 mt-2"
                   >
@@ -77,83 +90,88 @@
 </template>
 
 <script>
-import { FETCH_ANIMALS, REMOVE_ANIMAL } from "@/store/animals/animal.constants";
+import { FETCH_EXPERTS, REMOVE_EXPERT } from "@/store/experts/expert.constants";
 import HeaderPage from "@/components/HeaderPage.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "ManageAnimals",
+  name: "ManageExperts",
   components: {
     HeaderPage
   },
-  data: function() {
+  data() {
     return {
-      animals: [],
+      experts: [],
       sortType: 1
     };
   },
   computed: {
-    ...mapGetters("animal", ["getAnimals", "getMessage"])
+    ...mapGetters("expert", ["getExperts", "getMessage"])
   },
   methods: {
-    fetchAnimals() {
-      this.$store.dispatch(`animal/${FETCH_ANIMALS}`).then(
+    fetchExperts() {
+      this.$store.dispatch(`expert/${FETCH_EXPERTS}`).then(
         () => {
-          this.animals = this.getAnimals;
+          this.experts = this.getExperts;
         },
         err => {
           this.$alert(`${err.message}`, "Erro", "error");
         }
       );
     },
+
     sort() {
-      this.animals.sort(this.compareNames);
+      this.experts.sort(this.compareNames);
       this.sortType *= -1;
     },
-    compareNames(u1, u2) {
-      if (u1.name > u2.name) return 1 * this.sortType;
-      else if (u1.name < u2.name) return -1 * this.sortType;
+
+    compareNames(e1, e2) {
+      if (e1.name > e2.name) return 1 * this.sortType;
+      else if (e1.name < e2.name) return -1 * this.sortType;
       else return 0;
     },
 
-    viewAnimal(id) {
-      const animal = this.animals.find(animal => animal._id === id);
+    formatDate(date) {
+      if (!date) return "";
+      return new Date(date).toLocaleDateString("pt-PT");
+    },
+
+    viewExpert(id) {
+      const expert = this.experts.find(e => e._id === id);
+      if (!expert) return;
 
       this.$fire({
-        title: animal.name,
-        html: this.generateTemplate(animal),
-        imageUrl: animal.links[0].url,
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Imagem desconhecida"
+        title: expert.name,
+        html: this.generateTemplate(expert)
       });
     },
 
-    generateTemplate(animal) {
-      let response = `
-          <h4>Grupo:</b> ${animal.group}</h4>
-          <h5>(nível:</b> ${animal.level})</h5>
-          <p>${animal.description}</p> 
-          <p>Elementos multimédia:
-        `;
-      for (const link of animal.links) {
-        response += ` <a href='${link.url}' target='_blank'>${link.types}</a>`;
-      }
-      response += `</p><p>Comentários: ${animal.comments.length} Avaliações: ${animal.evaluation.length}</p> `;
-      return response;
+    generateTemplate(expert) {
+      // Template simples, apenas com os campos que realmente existem no form
+      return `
+        <h4>Grupo: ${expert.group || ""}</h4>
+        <p><b>Criado em:</b> ${this.formatDate(expert.createdAt) || "-"}</p>
+        <p>${expert.desc || ""}</p>
+      `;
     },
-    removeAnimal(id) {
+
+    removeExpert(id) {
       this.$confirm(
         "Se sim, clique em OK",
-        "Deseja mesmo remover o animal?",
+        "Deseja mesmo remover o expert?",
         "warning",
         { confirmButtonText: "OK", cancelButtonText: "Cancelar" }
       ).then(
         () => {
-          this.$store.dispatch(`animal/${REMOVE_ANIMAL}`, id).then(() => {
-            this.$alert(this.getMessage, "Animal removido!", "success");
-            this.fetchAnimals();
-          });
+          this.$store
+            .dispatch(`expert/${REMOVE_EXPERT}`, id)
+            .then(() => {
+              this.$alert(this.getMessage, "Expert removido!", "success");
+              this.fetchExperts();
+            })
+            .catch(err => {
+              this.$alert(`${err.message}`, "Erro", "error");
+            });
         },
         () => {
           this.$alert("Remoção cancelada!", "Informação", "info");
@@ -162,7 +180,7 @@ export default {
     }
   },
   created() {
-    this.fetchAnimals();
+    this.fetchExperts();
   }
 };
 </script>
