@@ -1,88 +1,360 @@
 {
-  "animals": [
+  "quizzes": [
     {
-      "id": 1,
-      "name": "cão",
-      "group": "mamífero",
-      "level": 1,
-      "description": "O cão é o melhor amigo do homem",
-      "links": {
-        "photo": "https://www.purina.pt/sites/g/files/mcldtz1671/files/2018-03/cao-em-casa.jpg",
-        "video": "https:",
-        "sound": "https"
-      },
-      "active": true
+      "_id": "637e9f2c88d7da00045150a1",
+      "points": 5,
+      "level": 5,
+      "questions": [],
+      "active": true,
+      "name": "Quem foi Viriato ?",
+      "date": "2022-11-23T22:31:08.246+0000",
+      "__v": 0
     },
     {
-      "id": 2,
-      "name": "gato",
-      "group": "mamífero",
-      "level": 1,
-      "description": "O gato é o melhor amigo do homem",
-      "links": {
-        "photo": "https://www.royalcanin.es/wp-content/uploads/2017/10/bigotesnew.jpg",
-        "video": "https:",
-        "sound": "https"
-      },
-      "active": true
+      "_id": "637e9fe888d7da00045150a2",
+      "points": 3,
+      "level": 3,
+      "questions": [],
+      "active": true,
+      "name": "Qual a melhor ração para os cães?",
+      "date": "2022-11-23T22:34:16.848+0000",
+      "__v": 0
     },
     {
-      "id": 3,
-      "name": "pardal",
-      "group": "ave",
+      "_id": "637eae9988d7da00045150c8",
+      "points": 2,
       "level": 2,
-      "description": "O pardal é o melhor amigo do homem",
-      "links": {
-        "photo": "https://cdn.pixabay.com/photo/2019/07/23/00/55/sparrow-4356373_960_720.png",
-        "video": "https:",
-        "sound": "https"
-      },
-      "active": true
-    },
+      "questions": [],
+      "active": true,
+      "name": "OUTRO",
+      "date": "2022-11-23T23:36:57.933+0000",
+      "__v": 0
+    }
+  ],
+  "sponsors": [
     {
-      "id": 4,
-      "name": "cavalo",
-      "group": "mamífero",
-      "level": 2,
-      "description": "O cavalo é o melhor amigo do homem",
-      "links": {
-        "photo": "https://cdn.pixabay.com/photo/2017/03/29/20/02/arabian-2186313_960_720.png",
-        "video": "https:",
-        "sound": "https"
-      },
+      "_id": "6921e1fbc6c67a351f1a14e6",
+      "name": "Primeiro Sponsor",
+      "animal": "cao",
+      "endereco": "Rua XPTO",
+      "contact": "912345678",
+      "photo": null
+    }
+  ],
+  "experts": [
+    {
+      "_id": "69233be5f222d35a4d9eb4b0",
+      "name": "Carlos Mendes",
+      "group": "Grupo A",
+      "desc": "Especialista em sistemas de informação com experiência em suporte técnico e redes.1",
+      "createdAt": "2025-02-01T10:15:00.000Z",
+      "updatedAt": "2025-11-23T17:04:04.828+0000",
       "active": true
     }
   ],
-  "login": {
-    "token": "12345",
-    "user": {
-      "name": "Ricardo Queirós",
-      "email": "ricardo.queiros@gmail.com",
-      "birthday": "19-04-1975",
+  "animals": [
+    {
+      "_id": "6921efe2d67507146c568f5f",
+      "evaluation": [],
+      "active": true,
+      "name": "xpto",
+      "group": "anfibio",
+      "description": "djkdsnfdsf",
+      "level": 1,
+      "links": [
+        {
+          "_id": "6921efe2d67507146c568f62",
+          "types": "photo",
+          "url": "https://www.google.pt"
+        },
+        {
+          "_id": "6921efe2d67507146c568f61",
+          "types": "video",
+          "url": "https://www.google.pt"
+        },
+        {
+          "_id": "6921efe2d67507146c568f60",
+          "types": "sound",
+          "url": "https://www.google.pt"
+        }
+      ],
+      "comments": [
+        {
+          "_id": "69273e510143c10ad1dbc82a",
+          "body": "",
+          "user": "691baaabaab39a64dc593277",
+          "date": "2025-11-03T17:52:00.000+0000"
+        },
+        {
+          "_id": "69273e510143c10ad1dbc829",
+          "body": "",
+          "user": "691baaabaab39a64dc593277",
+          "date": "2025-11-03T17:52:00.000+0000"
+        },
+        {
+          "_id": "69273e510143c10ad1dbc828",
+          "body": "",
+          "user": "691baaabaab39a64dc593277",
+          "date": "2025-11-03T17:52:00.000+0000"
+        },
+        {
+          "_id": "69273e510143c10ad1dbc827",
+          "body": "",
+          "user": "691baaabaab39a64dc593277",
+          "date": "2025-11-03T17:52:00.000+0000"
+        }
+      ],
+      "__v": 0
+    }
+  ],
+  "questions": [
+    {
+      "_id": "637e9e6888d7da0004515099",
+      "level": 4,
+      "active": true,
+      "question": "Qual a capital de Portugal",
+      "group": "",
+      "type": "Escolha múltipla",
+      "description": "Indique a capital de Portugal",
+      "title": "",
+      "answers": [
+        {
+          "_id": "637e9e8e88d7da000451509c",
+          "title": "Coimbra",
+          "description": "",
+          "correct": false
+        },
+        {
+          "_id": "637e9e8e88d7da000451509b",
+          "title": "Porto ",
+          "description": "",
+          "correct": false
+        },
+        {
+          "_id": "637e9e8e88d7da000451509a",
+          "title": "Lisboa",
+          "description": "",
+          "correct": true
+        }
+      ],
+      "date": "2022-11-23T22:27:52.982+0000",
+      "__v": 0
+    },
+    {
+      "_id": "637e9eff88d7da000451509d",
+      "level": 2,
+      "active": true,
+      "question": "O que é um javali?",
+      "group": "",
+      "type": "Escolha múltipla",
+      "description": "Escolha múltipla",
+      "title": "",
+      "answers": [
+        {
+          "_id": "637e9eff88d7da00045150a0",
+          "title": "Mamífero",
+          "description": "",
+          "correct": false
+        },
+        {
+          "_id": "637e9eff88d7da000451509f",
+          "title": "Ave",
+          "description": "",
+          "correct": false
+        },
+        {
+          "_id": "637e9eff88d7da000451509e",
+          "title": "hominídeo",
+          "description": "",
+          "correct": true
+        }
+      ],
+      "date": "2022-11-23T22:30:23.722+0000",
+      "__v": 0
+    },
+    {
+      "_id": "637ef4ba88d7da0004515100",
+      "level": 1,
+      "active": true,
+      "question": "1 - O QUE É UMA LEBRE?",
+      "group": "",
+      "type": "Escolha múltipla",
+      "description": "ANIMAL VELOZ",
+      "title": "",
+      "answers": [
+        {
+          "_id": "637ef4ba88d7da0004515103",
+          "title": "UM MAMIFERO",
+          "description": "",
+          "correct": true
+        },
+        {
+          "_id": "637ef4ba88d7da0004515102",
+          "title": "UM HERBIVORO",
+          "description": "",
+          "correct": false
+        },
+        {
+          "_id": "637ef4ba88d7da0004515101",
+          "title": "UM PEIXE",
+          "description": "",
+          "correct": false
+        }
+      ],
+      "date": "2022-11-24T04:36:10.004+0000",
+      "__v": 0
+    }
+  ],
+  "users": [
+    {
+      "_id": "6778313389708a427060a06e",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "emso",
+      "type": "user",
+      "birth_date": "2001-01-01T00:00:00.000+0000",
+      "description": "",
       "location": {
-        "city": "Porto",
+        "city": "emso",
+        "district": "",
+        "country": "emso"
+      },
+      "auth": {
+        "username": "emso",
+        "password": "$2a$04$RstOvnPEzvWCgwWsFKesgOTlJiC6A8Nkn6Fd7XzbkrW05BWdHP0Ma",
+        "public_key": "dp5lgeiol6u6778313389708a427060a06e",
+        "private_key": "shnw038ltx6778313389708a427060a06e"
+      },
+      "registration_date": "2025-01-03T18:49:23.681+0000",
+      "__v": 0
+    },
+    {
+      "_id": "691baaabaab39a64dc593277",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "Fábio",
+      "type": "admin",
+      "birth_date": "1998-01-17T00:00:00.000+0000",
+      "description": "",
+      "location": {
+        "city": "Coimbra",
+        "district": "",
         "country": "Portugal"
       },
       "auth": {
-        "username": "joao",
-        "password": "12345"
+        "username": "fabio1729",
+        "password": "$2a$04$l7C2rrQFlapWGhCCRzTPfOE3WZzpBqGn9kEYo1Xx0FxGpVdjZXAGy",
+        "public_key": "jmct9kr6b2j691baaabaab39a64dc593277",
+        "private_key": "te6jx3o0659691baaabaab39a64dc593277"
       },
-      "gamification": {
-        "quiz": 1,
-        "points": 0
-      }
-    }
-  },
-  "quiz": [
-    {
-      "id": 1,
-      "name": "adasd",
-      "points": 12
+      "registration_date": "2025-11-17T23:07:23.117+0000",
+      "__v": 0
     },
     {
-      "id": 1,
-      "name": "adasd",
-      "points": 12
+      "_id": "691e431628076c4c5c119be5",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "marcelo",
+      "type": "user",
+      "birth_date": "1990-12-30T00:00:00.000+0000",
+      "description": "",
+      "location": {
+        "city": "q",
+        "district": "",
+        "country": "ao"
+      },
+      "auth": {
+        "username": "m",
+        "password": "$2a$04$6DossljfIzJTdXkAqHqCH.BBsuIJb1mCE2qXYHFbYNqsWQLl7/4By",
+        "public_key": "fthf3dw5165691e431628076c4c5c119be5",
+        "private_key": "1jax0p7mu4vh691e431628076c4c5c119be5"
+      },
+      "registration_date": "2025-11-19T22:22:14.547+0000",
+      "__v": 0
+    },
+    {
+      "_id": "691e459828076c4c5c119be6",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "Ubira",
+      "type": "user",
+      "birth_date": "1990-12-30T00:00:00.000+0000",
+      "description": "",
+      "location": {
+        "city": "Lubango",
+        "district": "",
+        "country": "Angola"
+      },
+      "auth": {
+        "username": "ml",
+        "password": "$2a$04$7KfauWHeWvcFsQFdLs0mF.294ht7XsSGTA6K72iz4NAsOnPMH3sYy",
+        "public_key": "0no3x2mcn1h691e459828076c4c5c119be6",
+        "private_key": "tf2phlpwg9691e459828076c4c5c119be6"
+      },
+      "registration_date": "2025-11-19T22:32:56.104+0000",
+      "__v": 0
+    },
+    {
+      "_id": "691e476fd6a5a24b78cd8095",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "marcelo",
+      "type": "admin",
+      "birth_date": "1990-12-30T00:00:00.000+0000",
+      "description": "",
+      "location": {
+        "city": "Lubango",
+        "district": "",
+        "country": "Angola"
+      },
+      "auth": {
+        "username": "q",
+        "password": "$2a$04$8/Blgq.jL7.5S1dGs4IdAebiAi.LjcFfsFO7w8iE1IZffzLvvZivK",
+        "public_key": "03liiuon897b691e476fd6a5a24b78cd8095",
+        "private_key": "sdzywb788wl691e476fd6a5a24b78cd8095"
+      },
+      "registration_date": "2025-11-19T22:40:47.037+0000",
+      "__v": 0
+    },
+    {
+      "_id": "6920e0bc20e80894d148075b",
+      "gamification": {
+        "points": 0,
+        "quiz": null
+      },
+      "active": true,
+      "name": "admin",
+      "type": "admin",
+      "birth_date": "2025-11-21T00:00:00.000+0000",
+      "description": "admindsad",
+      "location": {
+        "city": "",
+        "district": "",
+        "country": ""
+      },
+      "auth": {
+        "username": "admin",
+        "password": "$2a$04$gEzh/L./66th5o7QeOpL4ecSQW3xb57Ox3tmBADq/QO872MWWKgpq",
+        "public_key": "2ymf3usvrs36920e0bc20e80894d148075b",
+        "private_key": "9xr30w2mrjb6920e0bc20e80894d148075b"
+      },
+      "registration_date": "2025-11-21T21:59:24.719+0000",
+      "__v": 0
     }
   ]
 }
